@@ -25,8 +25,16 @@ export default function Home() {
     setLoading(false);
   }
     return (
-        <>
+        <Container
+            disableGutters={true}
+            width="100%"
+            maxWidth="100%"
+            sx={{ margin: 0, padding: 0 }}
+        >
+            <ResponsiveAppBar />
+
             <Container>
+                <WaspIcon />
                 <Button href="/clients">GO TO CLIENTS VIEW</Button>
                 <Button href="/helpers">GO TO HELPER VIEW</Button>
             </Container>
