@@ -2,19 +2,18 @@ import mysql from "mysql2/promise";
 
 export default async function handler(req, res) {
     const dbconnection = await mysql.createConnection ({
-        host: "localhost",
-        database: "wasp_user",
-        port: 3306,
-        user: "root",
-        password: "password",
-        socketPath: "/src/components/waspDB.mysql"
+        host: "sql5.freemysqlhosting.net",
+        database: "sql5684859",
+        user: 'sql5684859',
+        password: 'ecShk75Znf',
+        port: 3306
     });
     try {
         const query = "SELECT * from SENIOR"
         const value = []
-        const [results] = await dbconnection.execute(query, values);
+        const [data] = await dbconnection.execute(query, value);
+        res.status(200).json({ results: data });
     } catch (error) {
         res.status(500).json({error: error.message});
     }
-    res.status(200).json({ name: "John Doe" });
   }
