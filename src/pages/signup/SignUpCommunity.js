@@ -52,7 +52,6 @@ const SignUpCommunity = ({ userType }) => {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            required
                             fullWidth
                             margin="normal"
                         />
@@ -61,7 +60,6 @@ const SignUpCommunity = ({ userType }) => {
                             name="phone"
                             value={formData.phone}
                             onChange={handleChange}
-                            required
                             fullWidth
                             margin="normal"
                         />
@@ -151,14 +149,14 @@ const SignUpCommunity = ({ userType }) => {
                             margin="normal"
                             required
                         />
-                        {/* <TextField
-                            label="Contact"
-                            name="contact"
-                            value={formData.contact}
+                        <TextField
+                            label="Phone"
+                            name="phone"
+                            value={formData.phone}
                             onChange={handleChange}
                             fullWidth
                             margin="normal"
-                        /> */}
+                        />
                         <TextField
                             label="Email"
                             name="email"
