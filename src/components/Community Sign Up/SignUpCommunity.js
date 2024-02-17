@@ -43,9 +43,7 @@ const SignUpCommunity = () => {
   const renderFormFields = () => {
     switch (userType) {
       case 'Senior':
-        return  <Link href="/">Back to home</Link>
-        // window.location.href = '/seniors';
-        break;
+        return window.location.href = '/seniors';
       case 'Guardian':
         return (
           <>
@@ -260,7 +258,9 @@ const SignUpCommunity = () => {
 
   return (
     <>
-      <Typography style={{ marginBottom: '50px', textAlign: 'center', fontSize: '30px' }}>
+      <Typography
+        style={{ marginBottom: '50px', textAlign: 'center', fontSize: '30px' }}
+      >
         Registration Form
       </Typography>
 
