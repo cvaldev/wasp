@@ -12,8 +12,13 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { WaspIcon } from "./waspIcon";
+import { AppLink } from "./AppLink";
 
-const pages = ["Services", "Volunteers", "About"];
+const pages = [
+    { name: "Client View", href: "/clients" },
+    { name: "Helper View", href: "/helpers" },
+    { name: "About", href: "/" },
+];
 const settings = ["Profile", "Account", "Logout"];
 
 function ResponsiveAppBar() {
@@ -47,7 +52,6 @@ function ResponsiveAppBar() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
                         sx={{
                             mr: 2,
                             display: { xs: "none", md: "flex" },
@@ -58,7 +62,7 @@ function ResponsiveAppBar() {
                             textDecoration: "none",
                         }}
                     >
-                        WASP
+                        <AppLink href="/">WASP</AppLink>
                     </Typography>
 
                     <Box
@@ -95,14 +99,11 @@ function ResponsiveAppBar() {
                                 display: { xs: "block", md: "none" },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
-                                >
-                                    <Typography textAlign="center">
-                                        {page}
-                                    </Typography>
+                            {pages.map(({ name, href }, i) => (
+                                <MenuItem key={i} onClick={handleCloseNavMenu}>
+                                    <AppLink textAlign="center" href={href}>
+                                        {name}
+                                    </AppLink>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -134,13 +135,13 @@ function ResponsiveAppBar() {
                             display: { xs: "none", md: "flex" },
                         }}
                     >
-                        {pages.map((page) => (
+                        {pages.map(({ name, href }, i) => (
                             <Button
-                                key={page}
+                                key={i}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: "white", display: "block" }}
                             >
-                                {page}
+                                <AppLink href={href}>{name}</AppLink>
                             </Button>
                         ))}
                     </Box>
