@@ -7,7 +7,8 @@ export default function Home() {
     return (
         <>
             <Container>
-                <Button>CLICK ME</Button>
+                <Button href="/clients">GO TO CLIENTS VIEW</Button>
+                <Button href="/helpers">GO TO HELPER VIEW</Button>
             </Container>
         </>
     );
