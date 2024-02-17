@@ -1,8 +1,9 @@
 import { Inter } from "next/font/google";
 import Weather from "../components/weather";
-import { Container, Button } from "@mui/material";
+import { Container, Button, Grid } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
+import { LandingPage } from "./landingPage/LandingPage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,30 +31,22 @@ export default function Home() {
             maxWidth="100%"
             sx={{ margin: 0, padding: 0 }}
         >
-            <Container>LANDING PAGE</Container>
-            <div>
-                {/* <form onSubmit={fetchWeather} className='zipCodeForm'>
-            <div>
-                <input onChange={(e) => setZipCode(e.target.value)}
-                    className='zipCodeForm'
-                    type = 'text'
-                    placeholder='Type zipcode'
-                />
-            </div>
-        </form> */}
-                <form onSubmit={fetchWeather} className="cityForm">
-                    <div>
-                        <input
-                            onChange={(e) => setCity(e.target.value)}
-                            className="cityForm"
-                            type="text"
-                            placeholder="Search city"
-                        />
-                    </div>
-                </form>
-                <button onClick={fetchWeather}>Fetch data</button>
-                {Weather.main && <Weather data={weather} />}
-            </div>
+            <LandingPage />
         </Container>
     );
 }
+
+/* <div>
+    <form onSubmit={fetchWeather} className="cityForm">
+        <div>
+            <input
+                onChange={(e) => setCity(e.target.value)}
+                className="cityForm"
+                type="text"
+                placeholder="Search city"
+            />
+        </div>
+    </form>
+    <button onClick={fetchWeather}>Fetch data</button>
+    {Weather.main && <Weather data={weather} />}
+</div> */
