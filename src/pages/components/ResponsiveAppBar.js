@@ -51,7 +51,8 @@ function ResponsiveAppBar() {
                     <Typography
                         variant="h6"
                         noWrap
-                        component="a"
+                        component={AppLink}
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: "none", md: "flex" },
@@ -62,7 +63,7 @@ function ResponsiveAppBar() {
                             textDecoration: "none",
                         }}
                     >
-                        <AppLink href="/">WASP</AppLink>
+                        WASP
                     </Typography>
 
                     <Box
@@ -101,9 +102,7 @@ function ResponsiveAppBar() {
                         >
                             {pages.map(({ name, href }, i) => (
                                 <MenuItem key={i} onClick={handleCloseNavMenu}>
-                                    <AppLink textAlign="center" href={href}>
-                                        {name}
-                                    </AppLink>
+                                    <AppLink href={href}>{name}</AppLink>
                                 </MenuItem>
                             ))}
                         </Menu>
