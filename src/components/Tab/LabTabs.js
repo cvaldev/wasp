@@ -4,6 +4,8 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import TableData from '../Table/TableData';
 import CustomTabPanel from './CustomTabPanel';
+import { columns, options } from '@/ref/helperTable';
+import { data } from '@/data/client';
 
 export default function LabTabs() {
   const [value, setValue] = React.useState(1);
@@ -30,11 +32,11 @@ export default function LabTabs() {
   const tabpanel = [
     {
       value: 1,
-      content: <TableData />,
+      content: <TableData data={data} columns={columns} options={options}/>,
     },
     {
       value: 2,
-      content: 'Item Two',
+      content: <TableData data={data} columns={columns} options={options}/>,
     },
   ];
 
