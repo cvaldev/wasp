@@ -1,9 +1,9 @@
 import { getDb } from "./db";
 
-export default async function getRequests(req, res) {
+export default async function getReqHistory(req, res) {
     const dbconnection = await getDb();
     try {
-        const query = "SELECT requestID, reqStatus, distance FROM REQUESTS, SENIOR where SID=seniorID and seniorID in (select seniorID from SENIOR, VOLUNTEER where city=city)";
+        const query = "SELECT VOLUNTEER.name,INCHARGE.rating FROM INCHARGE, VOLUNTEER where VID=volunteerID";
         const value = [];
         const [data] = await dbconnection.execute(query, value);
         res.status(200).json({ results: data });
