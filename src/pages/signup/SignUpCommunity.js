@@ -239,7 +239,29 @@ const SignUpCommunity = ({ userType }) => {
                 );
         }
     };
-
+    const onSubmitHandler = async (e) => {
+        e.preventDefault();
+    
+        try {
+          const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/insertSenior`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+          });
+    
+          if (response.ok) {
+            // Handle successful form submission
+            console.log('Form submitted successfully!');
+          } else {
+            // Handle error response
+            console.error('Error submitting form:', response.statusText);
+          }
+        } catch (error) {
+          console.error('Error submitting form:', error);
+        }
+      };
     return (
         <>
             <Typography
@@ -283,6 +305,7 @@ const SignUpCommunity = ({ userType }) => {
                         color="primary"
                         style={{ marginTop: 20 }}
                         type="submit"
+                        onClick={onSubmitHandler}
                     >
                         Submit
                     </Button>
