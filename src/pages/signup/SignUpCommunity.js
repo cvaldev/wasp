@@ -252,7 +252,7 @@ const SignUpCommunity = ({ userType }) => {
                 case "senior":
                     endpoint = "insertSenior";
                     break;
-                case "community_member":
+                case "volunteer":
                     endpoint = "inserVolunteer";
                     break;
                 default:
@@ -308,9 +308,7 @@ const SignUpCommunity = ({ userType }) => {
                         disabled
                     >
                         <MenuItem value="guardian">Guardian</MenuItem>
-                        <MenuItem value="volunteer">
-                            Community Helper
-                        </MenuItem>
+                        <MenuItem value="volunteer">Volunteer</MenuItem>
                         <MenuItem value="senior">Senior</MenuItem>
                     </Select>
                     {renderFormFields()}
