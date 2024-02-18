@@ -3,7 +3,7 @@ import Weather from "../components/weather";
 import { Container, Button, Grid } from "@mui/material";
 import axios from "axios";
 import { useState } from "react";
-import { LandingPage } from "./landingPage/LandingPage";
+import LandingPage from "./landingPage/LandingPage";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,9 +1,9 @@
 import { Button, Grid, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import landingImage from "./landingImage.jpg";
-import { AppLink } from "../components/AppLink";
+import { AppLink } from "../../components/AppLink";
 
-export function LandingPage(props) {
+export default function LandingPage(props) {
     return (
         <Grid container height="100vh">
             <Grid item xs={8} sx={{ padding: "10%" }}>

@@ -15,7 +15,7 @@ import {
     Alert,
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
-import { SuccessSnackBar } from "../components/SuccessSnackBar";
+import { SuccessSnackBar } from "../../components/SuccessSnackBar";
 
 const UserTypeEnum = {
     senior: "Senior",
