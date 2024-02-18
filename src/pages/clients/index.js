@@ -3,7 +3,7 @@ import { columns, options } from "@/ref/clientTable";
 import TableData from "@/components/Table/TableData";
 import { data } from "@/data/helper";
 import { useState } from "react";
-import { SuccessSnackBar } from "../components/SuccessSnackBar";
+import { SuccessSnackBar } from "../../components/SuccessSnackBar";
 
 export default function Client() {
     const [requestSent, setRequestSent] = useState(false);
