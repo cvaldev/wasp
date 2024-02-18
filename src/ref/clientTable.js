@@ -38,7 +38,7 @@ export const columns = [
   },
 ];
 
-export const options = {
+const options = {
   filterType: 'dropdown',
   textLabels: {
     body: {

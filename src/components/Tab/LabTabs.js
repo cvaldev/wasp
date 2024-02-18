@@ -4,10 +4,10 @@ import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 import TableData from "../Table/TableData";
 import CustomTabPanel from "./CustomTabPanel";
-import { columns, options } from "@/ref/helperTable";
+import { columns } from "@/ref/helperTable";
 import { data as clientData } from "@/data/client";
 
-export default function LabTabs() {
+export default function LabTabs({ options }) {
     const [value, setValue] = React.useState(1);
     const [data, setData] = React.useState(clientData);
     // GET REQUESTS
