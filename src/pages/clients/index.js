@@ -10,7 +10,17 @@ export default function Client() {
     const handleOnClickRequest = async (e) => {
         e.preventDefault();
         const res = await fetch(
-            `${process.env.NEXT_PUBLIC_HOST}/api/insertRequest`
+            `${process.env.NEXT_PUBLIC_HOST}/api/insertRequest`,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    seniorID: Math.floor(Math.random() * (21 - 10) + 10),
+                    distance: 123,
+                }),
+            }
         );
 
         if (res.ok) {
