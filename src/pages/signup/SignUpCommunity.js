@@ -18,7 +18,7 @@ import CheckIcon from "@mui/icons-material/Check";
 
 const UserTypeEnum = {
     senior: "Senior",
-    community_helper: "Community Member",
+    volunteer: "Volunteer",
 };
 
 const SignUpCommunity = ({ userType }) => {
@@ -132,7 +132,7 @@ const SignUpCommunity = ({ userType }) => {
                         /> */}
                     </>
                 );
-            case "community_helper":
+            case "volunteer":
                 return (
                     <>
                         <TextField
@@ -308,7 +308,7 @@ const SignUpCommunity = ({ userType }) => {
                         disabled
                     >
                         <MenuItem value="guardian">Guardian</MenuItem>
-                        <MenuItem value="community_helper">
+                        <MenuItem value="volunteer">
                             Community Helper
                         </MenuItem>
                         <MenuItem value="senior">Senior</MenuItem>
