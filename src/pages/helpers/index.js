@@ -1,5 +1,5 @@
-import LabTabs from '@/components/Tab/LabTabs';
-import { Alert, Grid } from '@mui/material';
+import LabTabs from "@/components/Tab/LabTabs";
+import { Alert, Grid } from "@mui/material";
 
 export default function HelperView() {
   return (
@@ -15,10 +15,5 @@ export default function HelperView() {
             <LabTabs />
           </Grid>
         </Grid>
-      </Grid>
-      <Grid item xs={4}>
-        <div>Details</div>
-      </Grid>
-    </Grid>
-  );
+    );
 }
