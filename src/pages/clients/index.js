@@ -1,5 +1,6 @@
 import { Alert, Grid } from '@mui/material';
-import { columns, options } from '@/ref/clientTable';
+import { columns } from '@/ref/clientTable';
+import { options } from '@/ref/clientTable';
 import TableData from '@/components/Table/TableData';
 import { data } from '@/data/helper';
 

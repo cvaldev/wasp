@@ -1,9 +1,7 @@
 import Link from 'next/link';
 
-const AppLink = (props) => {
+export default function AppLink(props) {
   return (
     <Link {...props} style={{ textDecoration: 'none', color: 'inherit' }} />
   );
-};
-
-export default AppLink;
+}

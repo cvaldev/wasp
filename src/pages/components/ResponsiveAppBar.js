@@ -11,8 +11,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import { WaspIcon } from "./waspIcon";
-import { AppLink } from "./AppLink";
+import AppLink from "./AppLink";
+import WaspIcon from "./waspIcon";
 
 const pages = [
     { name: "Client View", href: "/clients" },
@@ -152,8 +152,8 @@ function ResponsiveAppBar() {
                                 sx={{ p: 0 }}
                             >
                                 <Avatar
-                                    alt="Remy Sharp"
-                                    src="/static/images/avatar/2.jpg"
+                                    alt="Bee Sharp"
+                                    src="beeTheWasp.jpeg"
                                 />
                             </IconButton>
                         </Tooltip>

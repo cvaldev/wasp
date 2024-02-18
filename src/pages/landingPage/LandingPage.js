@@ -1,7 +1,7 @@
 import { Button, Grid, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import landingImage from './landingImage.jpg';
-import { AppLink } from '../components/AppLink';
+import AppLink from '../components/AppLink';
 
 const LandingPage = (props) => {
   return (
