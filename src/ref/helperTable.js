@@ -43,11 +43,4 @@ export const columns = [
   },
 ];
 
-export const options = {
-  filterType: 'dropdown',
-  textLabels: {
-    body: {
-      noMatch: 'Loading... hihi ^^',
-    },
-  },
-};
+
