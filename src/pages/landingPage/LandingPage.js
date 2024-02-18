@@ -22,7 +22,7 @@ export function LandingPage(props) {
                             <Typography variant="h6">Senior Sign In</Typography>
                         </Button>
                         <Typography
-                            href="/signup?userType=community_helper"
+                            href="/signup?userType=volunteer"
                             component={AppLink}
                             sx={{ display: "flex", alignSelf: "center" }}
                         >
