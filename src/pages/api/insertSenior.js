@@ -1,13 +1,7 @@
-import mysql from "mysql2/promise";
+import { getDb } from "./db";
 
 export default async function insertSenior(req, res) {
-    const dbconnection = await mysql.createConnection ({
-        host: "sql5.freemysqlhosting.net",
-        database: "sql5684859",
-        user: 'sql5684859',
-        password: 'ecShk75Znf',
-        port: 3306
-    });
+    const dbconnection = await getDb();
     try {
         console.log(req.body);
         const value = req.body;
