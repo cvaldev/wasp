@@ -308,7 +308,7 @@ const SignUpCommunity = ({ userType }) => {
                         disabled
                     >
                         <MenuItem value="guardian">Guardian</MenuItem>
-                        <MenuItem value="volunteer">Community Helper</MenuItem>
+                        <MenuItem value="volunteer">Volunteer</MenuItem>
                         <MenuItem value="senior">Senior</MenuItem>
                     </Select>
                     {renderFormFields()}
