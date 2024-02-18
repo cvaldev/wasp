@@ -11,7 +11,10 @@ import {
     Typography,
     Checkbox,
     FormControlLabel,
+    Snackbar,
+    Alert,
 } from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
 
 const UserTypeEnum = {
     senior: "Senior",
@@ -33,6 +36,7 @@ const SignUpCommunity = ({ userType }) => {
         // password: "",
         // consentForm: "",
     });
+    const [openSnackbar, setOpenSnackbar] = useState(false);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -241,27 +245,42 @@ const SignUpCommunity = ({ userType }) => {
     };
     const onSubmitHandler = async (e) => {
         e.preventDefault();
-    
+
         try {
-          const response = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/insertSenior`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          });
-    
-          if (response.ok) {
-            // Handle successful form submission
-            console.log('Form submitted successfully!');
-          } else {
-            // Handle error response
-            console.error('Error submitting form:', response.statusText);
-          }
+            let endpoint;
+            switch (userType) {
+                case "senior":
+                    endpoint = "insertSenior";
+                    break;
+                case "community_member":
+                    endpoint = "inserVolunteer";
+                    break;
+                default:
+                    throw new Error("INVALID USER TYPE");
+            }
+            const response = await fetch(
+                `${process.env.NEXT_PUBLIC_HOST}/api/${endpoint}`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData),
+                }
+            );
+
+            if (response.ok) {
+                // Handle successful form submission
+                console.log("Form submitted successfully!");
+                setOpenSnackbar(true);
+            } else {
+                // Handle error response
+                console.error("Error submitting form:", response.statusText);
+            }
         } catch (error) {
-          console.error('Error submitting form:', error);
+            console.error("Error submitting form:", error);
         }
-      };
+    };
     return (
         <>
             <Typography
@@ -311,6 +330,18 @@ const SignUpCommunity = ({ userType }) => {
                     </Button>
                 </FormGroup>
             </FormControl>
+            <Snackbar
+                open={openSnackbar}
+                autoHideDuration={6000}
+                onClose={() => setOpenSnackbar(false)}
+                anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            >
+                <Alert icon={<CheckIcon fontSize="large" />} severity="success">
+                    <Typography fontSize="2em" fontWeight="bold">
+                        Success!
+                    </Typography>
+                </Alert>
+            </Snackbar>
         </>
     );
 };
