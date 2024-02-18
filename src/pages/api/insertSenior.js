@@ -15,7 +15,7 @@ export default async function insertSenior(req, res) {
         + "','" + value.phone + "','" + value.email + "','" + SID + "')";
         const [data2] = await dbconnection.execute(queryGuardian);
         console.log(data2);
-        res.status(200);
+        res.status(200).json({ok: true});
     } catch (error) {
         console.log(error);
         res.status(500).json({error: error.message});
