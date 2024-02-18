@@ -15,6 +15,7 @@ import {
     Alert,
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
+import SuccessSnackBar from "../components/SuccessSnackBar";
 
 const UserTypeEnum = {
     senior: "Senior",
@@ -328,7 +329,7 @@ const SignUpCommunity = ({ userType }) => {
                     </Button>
                 </FormGroup>
             </FormControl>
-            <Snackbar
+            {/* <Snackbar
                 open={openSnackbar}
                 autoHideDuration={6000}
                 onClose={() => setOpenSnackbar(false)}
@@ -339,7 +340,11 @@ const SignUpCommunity = ({ userType }) => {
                         Success!
                     </Typography>
                 </Alert>
-            </Snackbar>
+            </Snackbar> */}
+            <SuccessSnackBar
+                open={openSnackbar}
+                onClose={() => setOpenSnackbar(false)}
+            />
         </>
     );
 };
